@@ -1,0 +1,248 @@
+// Variáveis para as cores
+$header-bg: #FF69B4;
+$header-text: #E4EEF1;
+
+$section-bg-light: #FFD9EC;
+$section-bg-dark: #FF69B4;
+$section-text: #E4EEF1;
+
+$footer-bg: #FF69B4;
+$footer-text: #FFFFFF;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: $section-bg-light;
+  color: #333;
+}
+
+// Inicio header
+.header {
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+  background-color: $header-bg;
+  padding: 10px 20px;
+}
+
+.logo {
+  display: flex; 
+  align-items: center;
+}
+
+.logo img {
+  width: 70px;
+  height: auto; 
+  margin-right: 10px;
+}
+
+.titulo {
+  font-size: 1.3rem;
+  color: $header-text;
+}
+
+.menu {
+  display: flex;
+  gap: 40px;
+}
+
+.menu a {
+  text-decoration: none;
+  color: $header-text;
+  font-size: 1.3rem;
+}
+// Fim header
+
+// Inicio sobre
+.sobre {
+  background-color: $section-bg-light;
+  
+  padding: 20px;
+}
+
+.conteudo {
+  display: flex; 
+  justify-content: center; 
+  align-items: center;
+  gap: 20px;
+}
+
+.conteudo p {
+  flex: 0.8;
+  font-size: 1.5rem;
+  color: #000; 
+  margin: 0;
+}
+
+.conteudo img {
+  max-width: 300px; 
+  height: auto;
+}
+
+// Fim sobre
+
+// Inicio conscientização
+.conscientizacao {
+  background-color: $section-bg-dark;
+  color: $section-text;
+  padding: 20px;
+
+  .conteudo {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+
+    img {
+      max-width: 300px;
+      border-radius: 10px;
+    }
+
+    p {
+      font-size: 1.5rem;
+      color: $section-text;
+    }
+  }
+}
+
+// Dicas
+#dicas {
+  background-color: $section-bg-light;
+  padding: 20px;
+
+  .tips-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 0.1px;
+
+    .tip {
+      text-align: center;
+
+      img {
+        width: 200px; 
+        height: auto;
+        border-radius: 10px;
+      }
+
+      p {
+        margin-top: 10px;
+        font-size: 14px;
+      }
+    }
+  }
+}
+// Fim dicas
+
+// Footer
+.footer {
+  display: flex; 
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: $footer-bg; 
+
+  p {
+    margin: 0;
+    text-align: center; 
+    flex: 1; 
+    color: $footer-text; 
+  }
+
+  .icones {
+    display: flex;
+    gap: 10px; 
+    justify-content: flex-start; 
+    img {
+      width: 50px; 
+      height: 50px;
+    }
+  }
+
+  .simbolo_laço {
+    img {
+      width: 70px;
+      height: auto;
+    }
+  }
+}
+
+
+// Responsividade
+@media (max-width: 1024px) {
+  .header {
+    padding: 10px 15px;
+  }
+
+  .menu {
+    gap: 30px;
+  }
+
+  .conteudo {
+    gap: 15px;
+  }
+
+  .conteudo img {
+    max-width: 250px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+  }
+
+  .menu {
+    flex-direction: column;
+    gap: 20px;
+    align-items: flex-start;
+  }
+
+  .conteudo {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .conteudo img {
+    max-width: 100%;
+  }
+
+  .conscientizacao .content {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .tips-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .menu a {
+    font-size: 1rem;
+  }
+
+  .titulo {
+    font-size: 1.1rem;
+  }
+
+  .conteudo p {
+    font-size: 0.9rem;
+  }
+
+  .conteudo img {
+    max-width: 100%;
+  }
+
+  .icones img,
+  .simbolo_laço {
+    width: 25px;
+  }
+}
